@@ -31,3 +31,4 @@ Para configurar este comportamento, é necessário acessar o [Sonar Cloud](https
 
 - [ ] Adicionar referência à guia de configuração de variáveis de ambiente no Travis
 - [ ] Adicionar referência à guia de configuração de conta no Sonar Cloud
+- [ ] Transformar em Maven Archetype
