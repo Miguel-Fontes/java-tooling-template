@@ -1,0 +1,36 @@
+language: java
+
+install:
+- mvn clean install -DskipTests -Dmaven.javadoc.skip=true -B -V
+
+sudo: false
+
+script:
+- mvn test -B
+
+before_deploy:
+- tar -zcf $TRAVIS_BUILD_DIR/$OUTPUT_DIR/$TRAVIS_TAG.tar.gz -C $TRAVIS_BUILD_DIR/$OUTPUT_DIR $(find $TRAVIS_BUILD_DIR/$OUTPUT_DIR/ -name java-tooling-template-*.jar -printf "%f\n")
+
+cache:
+  directories:
+  - $HOME/.m2
+
+deploy:
+- provider: releases
+  api_key: "$GITHUB_OAUTH_TOKEN"
+  file: "$TRAVIS_BUILD_DIR/$OUTPUT_DIR/$TRAVIS_TAG.tar.gz"
+  skip_cleanup: true
+  name: $TRAVIS_TAG
+  on:
+    tags: true
+    condition: $TRAVIS_TAG =~ ^robots-[0-9].[0-9]$
+
+- provider: releases
+  api_key: "$GITHUB_OAUTH_TOKEN"
+  file: "$TRAVIS_BUILD_DIR/$OUTPUT_DIR/$TRAVIS_TAG.tar.gz"
+  skip_cleanup: true
+  name: $TRAVIS_TAG
+  prerelease: true
+  on:
+    tags: true
+    condition: $TRAVIS_TAG =~ ^robots-.*(beta|alpha|pre).*$
