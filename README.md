@@ -2,11 +2,11 @@
 
 Um repositório modelo para aplicações Java, utilizando:
 
-- [ ] Maven Release Plugin
-- [ ] Travis, com release em Github
-- [ ] Codecov
+- [x] Maven Release Plugin
+- [x] Travis, com release em Github
+- [x] Codecov
 - [ ] Sonarqube
-- [ ] JUnit 5
+- [x] JUnit 5
 
 ## Ferramentas
 
