@@ -9,7 +9,7 @@
 
     <name>java-tooling-template</name>
     <url>http://maven.apache.org</url>
-    <description>JUnit 5 + Compiler Source/Target 1.8</description>
+    <description>JUnit 5 + Travis + Sonarqube</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
