@@ -1,4 +1,4 @@
-# Java Tooling Template
+# Java Tooling Template [![Build Status](https://travis-ci.org/Miguel-Fontes/java-tooling-template.svg?branch=master)](https://travis-ci.org/Miguel-Fontes/java-tooling-template)
 
 Um repositório modelo para aplicações Java, utilizando:
 
