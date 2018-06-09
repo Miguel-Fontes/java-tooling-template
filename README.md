@@ -5,7 +5,7 @@ Um repositório modelo para aplicações Java, utilizando:
 - [x] Maven Release Plugin
 - [x] Travis, com release em Github
 - [x] Codecov
-- [ ] Sonarqube
+- [x] Sonarqube
 - [x] JUnit 5
 
 ## Ferramentas
@@ -17,3 +17,17 @@ Para que o Travis consiga fazer o deploy no Github releases, é necessário conf
 ### Codecov
 
 Após adicionar seu projeto ao Github e ter o Travis corretamente configurado, basta acessar o [codecov](https://codecov.io/) e visualizar o seu repositório. O endereço é `https://codecov.io/gh/<usuario-github>/<nome-repositorio>`.
+
+### Sonarqube
+
+Para projetos open source, o [Sonar Cloud](https://sonarcloud.io/projects) é gratuito Cada build executado no Travis irá encaminhar os novos dados para à plataforma.
+
+Para configurar este comportamento, é necessário acessar o [Sonar Cloud](https://sonarcloud.io/projects) e configurá-lo para sua conta do Github, obtendo um novo token e nome de organização. Feito isto, acesse a configuração de variáveis de ambiente do travis e crie:
+
+- **SONARQUBE_TOKEN**: com o valor do token;
+- **SONARQUBE_ORGANIZATION**: com o nome da organização;
+
+## Próximos passos
+
+- [ ] Adicionar referência à guia de configuração de variáveis de ambiente no Travis
+- [ ] Adicionar referência à guia de configuração de conta no Sonar Cloud

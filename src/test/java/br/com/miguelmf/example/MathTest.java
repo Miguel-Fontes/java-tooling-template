@@ -6,12 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Random;
 import java.util.stream.IntStream;
 
 import org.junit.jupiter.api.BeforeEach;
-
-import static br.com.miguelmf.example.Math.*;
 
 @DisplayName("Math")
 class MathTest {
@@ -97,16 +94,16 @@ class MathTest {
     }
 
     @Nested
-    @DisplayName ("Register")
+    @DisplayName("Register")
     class Register {
 
         @Test
         @DisplayName("Should register the number of operations")
         void shouldRegisterTheNumberOfOperations() {
-            IntStream.range(0, 30)
-                .forEach(x -> math.sum(x, x));
+            IntStream.range(0, 30).forEach(x -> math.sum(x, x));
 
-            assertEquals(30, math.getNumberOfOperations());;
+            assertEquals(30, math.getNumberOfOperations());
+            ;
         }
     }
 
