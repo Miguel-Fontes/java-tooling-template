@@ -2,12 +2,33 @@ package br.com.miguelmf.example;
 
 public class Math {
 
-    public static int sum(int x, int y) {
+    private int numberOfOperations;
+
+    private Math() {
+        super();
+        numberOfOperations = 0;
+    }
+
+    public static Math newInstance() {
+        return new Math();
+    }
+
+    public int sum(int x, int y) {
+        register();
         return x + y;
     }
 
-    public static int subtract(int x, int y) {
+    public int subtract(int x, int y) {
+        register();
         return x - y;
+    }
+
+    private void register() {
+        numberOfOperations++;
+    }
+
+    public int getNumberOfOperations() {
+        return numberOfOperations;
     }
 
 }
