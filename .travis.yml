@@ -11,6 +11,10 @@ script:
 before_deploy:
 - tar -zcf $TRAVIS_BUILD_DIR/$OUTPUT_DIR/$TRAVIS_TAG.tar.gz -C $TRAVIS_BUILD_DIR/$OUTPUT_DIR $(find $TRAVIS_BUILD_DIR/$OUTPUT_DIR/ -name java-tooling-template-*.jar -printf "%f\n")
 
+cache:
+  directories:
+  - $HOME/.m2
+
 deploy:
 - provider: releases
   api_key: "$GITHUB_OAUTH_TOKEN"
