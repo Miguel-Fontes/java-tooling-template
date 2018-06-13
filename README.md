@@ -16,21 +16,19 @@ O artefato final deste projeto é um archetype maven, que pode ser utilizado na 
 
 Para que o Travis consiga fazer o deploy no Github releases, é necessário configurar uma variável de ambiente nomeada GITHUB_OAUTH_TOKEN, cujo valor será o TOKEN do Github com os acessos adequados para efetuar o deploy. Veja como criar um Token na [documentação oficial](https://docs.travis-ci.com/user/deployment/releases/), além de como efetuar esta configuração através do Travis CLI, se preferir.
 
-Adicionalmente, deve ser definida uma variável *$OUTPUT_DIR*, indicando o diretório do arquivo que se deseja efetuar o deploy. A busca pelo arquivo é feita no seguinte diretório:
+Adicionalmente, existem variáveis que precisam ser configuradas no arquivo `travis.yml`:
 
-    $TRAVIS_BUILD_DIR/$OUTPUT_DIR
+- **OUTPUT_DIR**: o diretório, baseado no raiz do projeto, onde o artefato final do projeto será gerado;
+- **ARTIFACT_NAME**: o nome do artefato, deve ser setado o final name do Maven;
+- **ARTIFACT_EXTENSION**: a extensão do artefato final, geralmente o packaging type do Maven;
 
-Nesta linha:
+Estas variáveis são utilizadas para localizar e obter o artefato final do projeto. Um exemplo de configuração:
 
-- **$TRAVIS_BUILD_DIR**: variável de ambiente do próprio travis, e refere-se ao diretório raiz so projeto Java;
-- **$OUTPUT_DIR**: esta variável deve ser setada, indicando o diretório onde o arquivo será localizado, abaixo do diretório raiz.
+- OUTPUT_DIR: ui-module/target
+- ARTIFACT_NAME=java-tooling-template
+- ARTIFACT_EXTENSION=.jar
 
-Um exemplo:
-
-- $TRAVIS_BUILD_DIR: /usr/home/dev/jProject
-- $OUTPUT_DIR: ui-module/target
-
-Concatenando ambas as variáveis, temos `/usr/home/dev/jProject/ui-module/target`.
+Não é preciso indicar o diretório base, pois o travis já disponibiliza uma variável de ambiete com este valor.
 
 ### Codecov
 
