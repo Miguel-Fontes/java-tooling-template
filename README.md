@@ -16,6 +16,22 @@ O artefato final deste projeto é um archetype maven, que pode ser utilizado na 
 
 Para que o Travis consiga fazer o deploy no Github releases, é necessário configurar uma variável de ambiente nomeada GITHUB_OAUTH_TOKEN, cujo valor será o TOKEN do Github com os acessos adequados para efetuar o deploy. Veja como criar um Token na [documentação oficial](https://docs.travis-ci.com/user/deployment/releases/), além de como efetuar esta configuração através do Travis CLI, se preferir.
 
+Adicionalmente, deve ser definida uma variável *$OUTPUT_DIR*, indicando o diretório do arquivo que se deseja efetuar o deploy. A busca pelo arquivo é feita no seguinte diretório:
+
+    $TRAVIS_BUILD_DIR/$OUTPUT_DIR
+
+Nesta linha:
+
+- **$TRAVIS_BUILD_DIR**: variável de ambiente do próprio travis, e refere-se ao diretório raiz so projeto Java;
+- **$OUTPUT_DIR**: esta variável deve ser setada, indicando o diretório onde o arquivo será localizado, abaixo do diretório raiz.
+
+Um exemplo:
+
+- $TRAVIS_BUILD_DIR: /usr/home/dev/jProject
+- $OUTPUT_DIR: ui-module/target
+
+Concatenando ambas as variáveis, temos `/usr/home/dev/jProject/ui-module/target`.
+
 ### Codecov
 
 Após adicionar seu projeto ao Github e ter o Travis corretamente configurado, basta acessar o [codecov](https://codecov.io/) e visualizar o seu repositório. O endereço é `https://codecov.io/gh/<usuario-github>/<nome-repositorio>`.
