@@ -8,6 +8,8 @@ Um repositório modelo para aplicações Java, utilizando:
 - [x] Sonarqube
 - [x] JUnit 5
 
+O artefato final deste projeto é um archetype maven, que pode ser utilizado na criação de novos projetos ou outras ferramentas similares.
+
 ## Ferramentas
 
 ### Travis
