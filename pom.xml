@@ -4,7 +4,7 @@
 
     <groupId>br.com.miguelmf</groupId>
     <artifactId>java-tooling-template</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.3</version>
     <packaging>jar</packaging>
 
     <name>java-tooling-template</name>
@@ -21,7 +21,7 @@
         <connection>scm:git:git@github.com:Miguel-Fontes/java-tooling-template.git</connection>
         <url>scm:git:git@github.com:Miguel-Fontes/java-tooling-template.git</url>
         <developerConnection>scm:git:git@github.com:Miguel-Fontes/java-tooling-template.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>java-tooling-template-1.3</tag>
     </scm>
 
     <distributionManagement>
