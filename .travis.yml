@@ -9,7 +9,7 @@ script:
 - mvn test -B
 
 before_deploy:
-- tar -zcf $TRAVIS_BUILD_DIR/$OUTPUT_DIR/$TRAVIS_TAG.tar.gz -C $TRAVIS_BUILD_DIR/$OUTPUT_DIR $(find $TRAVIS_BUILD_DIR/$OUTPUT_DIR/ -name java-tooling-template-*.jar -printf "%f\n")
+- tar -zcf $TRAVIS_BUILD_DIR/$OUTPUT_DIR/$TRAVIS_TAG.tar.gz -C $TRAVIS_BUILD_DIR/$OUTPUT_DIR $(find $TRAVIS_BUILD_DIR/$OUTPUT_DIR/ -maxdepth 1 -name java-tooling-template-*.jar -printf "%f\n")
 
 cache:
   directories:
