@@ -43,6 +43,22 @@ Para configurar este comportamento, é necessário acessar o [Sonar Cloud](https
 - **SONARQUBE_TOKEN**: com o valor do token;
 - **SONARQUBE_ORGANIZATION**: com o nome da organização;
 
+## Utilizando o archetype
+
+Após instalar o archetype em seu repositório, basta:
+
+``` bash
+mvn archetype:generate                                     \
+  -DarchetypeGroupId=br.com.miguelmf                       \
+  -DarchetypeArtifactId=java-tooling-template-archetype    \
+  -DarchetypeVersion=1.0-SNAPSHOT                          \
+  -DgroupId=br.com.miguelmf                                \
+  -DartifactId=meu-projeto                                 \
+  -DgithubUser=Miguel-Fontes                               \
+  -Dversion=1.0-SNAPSHOT                                   \
+  -DinteractiveMode=false
+```
+
 ## Próximos passos
 
 - [ ] Adicionar referência à guia de configuração de variáveis de ambiente no Travis
