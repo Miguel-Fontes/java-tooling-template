@@ -36,4 +36,4 @@ deploy:
   prerelease: true
   on:
     tags: true
-    condition: $TRAVIS_TAG =~ ^$*-*(beta|alpha|pre).*$
+    condition: $TRAVIS_TAG =~ ^.*-(beta|alpha|pre).*$
