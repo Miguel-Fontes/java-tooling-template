@@ -10,17 +10,34 @@ Um repositório modelo para aplicações Java, utilizando:
 
 O artefato final deste projeto é um archetype maven, que pode ser utilizado na criação de novos projetos ou outras ferramentas similares.
 
-## Utilizando o Archetype
+<!-- TOC -->
 
-### Instalando o Archetype
+- [Java Tooling Template ![Build Status](https://travis-ci.org/Miguel-Fontes/java-tooling-template)](#java-tooling-template-build-statushttpstravis-ciorgmiguel-fontesjava-tooling-template)
+  - [Instalando o Archetype](#instalando-o-archetype)
+    - [Método 1 - Clonando o Repositório](#m%C3%A9todo-1---clonando-o-reposit%C3%B3rio)
+    - [Método 2 - Script de instalação](#m%C3%A9todo-2---script-de-instala%C3%A7%C3%A3o)
+    - [Método 3 - Maven Install File](#m%C3%A9todo-3---maven-install-file)
+  - [Criando e configurando seu projeto](#criando-e-configurando-seu-projeto)
+    - [Criando o projeto com o Maven](#criando-o-projeto-com-o-maven)
+    - [Configurando o Travis](#configurando-o-travis)
+    - [Configurando o Sonarqube](#configurando-o-sonarqube)
+    - [YOUR_NAME nome no arquivo LICENSE](#yourname-nome-no-arquivo-license)
+  - [Utilizando as ferramentas](#utilizando-as-ferramentas)
+    - [Acessando o Travis](#acessando-o-travis)
+    - [Sonarqube](#sonarqube)
+    - [Codecov](#codecov)
 
-#### Método 1 - Clonando o Repositório
+<!-- /TOC -->
+
+## Instalando o Archetype
+
+### Método 1 - Clonando o Repositório
 
 1. Clone este repositório (`git@github.com:Miguel-Fontes/java-tooling-template.git`)
 2. Execute `mvn install`
 3. Profit!
 
-#### Método 2 - Script de instalação
+### Método 2 - Script de instalação
 
 Então, você quer uma instalação automatizada? We got it!
 
@@ -31,7 +48,7 @@ Então, você quer uma instalação automatizada? We got it!
 
 O script aceita um argumento, a versão à ser instalada (que deve ser o nome de um release do Github releases). Se nenhuma versão for indicada, a mais recente é considerada.
 
-#### Método 3 - Maven Install File
+### Método 3 - Maven Install File
 
 Baixa sua versão favorita do github releases e a instale com o `mvn install:install-file`. Exemplificando abaixo, considerando que o Jar está no diretório de trabalho atual (lembre-se de alterar as versões em `-Dversion` e no nome do arquivo, em `-Dfile`).
 
@@ -43,9 +60,11 @@ mvn install:install-file -Dfile=java-tooling-template-archetype-1.5.jar \
   -Dversion=1.5
 ```
 
-### Construindo seu projeto
+## Criando e configurando seu projeto
 
-Após instalar o archetype em seu repositório, utilize o archetype normalmente. Exemplo:
+### Criando o projeto com o Maven
+
+Após instalar o archetype em seu repositório, crie seu projeto utilizando o maven. Exemplo:
 
 ``` bash
 mvn archetype:generate                                     \
@@ -59,13 +78,13 @@ mvn archetype:generate                                     \
   -DinteractiveMode=false
 ```
 
-O projeto irá considerar que o repositório da aplicação é `<githubUser>/<DartifactId>`. Se o repositório possuir outro nome, ajuste o `pom.xml`, na seção `<scm>`. Feito isto, faça o commit inicial com o push para o Github.
+O projeto irá considerar que o repositório da aplicação é `<githubUser>/<DartifactId>` (Ex: Miguel-Fontes/meu-projeto). Se o repositório possuir outro nome, ajuste o `pom.xml`, na seção `<scm>`. Feito isto, faça o commit inicial com o push para o Github.
 
-### Travis
+### Configurando o Travis
 
 Para que o Travis consiga fazer o deploy no Github releases, é necessário configurar uma variável de ambiente nomeada **GITHUB_OAUTH_TOKEN**, cujo valor será o TOKEN do Github com os acessos adequados para efetuar o deploy. Veja como criar um Token na [documentação oficial](https://docs.travis-ci.com/user/deployment/releases/), além de como efetuar esta configuração através do Travis CLI, se preferir.
 
-### Sonarqube
+### Configurando o Sonarqube
 
 Para projetos open source, o [Sonar Cloud](https://sonarcloud.io/projects) é gratuito Cada build executado no Travis irá encaminhar os novos dados para à plataforma.
 
@@ -78,7 +97,11 @@ A configuração final no Travis, deverá ficar como:
 
 ![image](https://user-images.githubusercontent.com/15656072/41385975-3e349512-6f55-11e8-9d5d-37ca04e63601.png)
 
-## As ferramentas
+### YOUR_NAME nome no arquivo LICENSE
+
+No arquivo LICENSE procure pela String YOUR_NAME e altere por seu nome completo. DONE!
+
+## Utilizando as ferramentas
 
 O ponto central das ferramentas é o Travis, que irá enviar dados sempre que um build for bem sucedido.
 
