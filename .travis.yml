@@ -26,7 +26,7 @@ deploy:
   name: $TRAVIS_TAG
   on:
     tags: true
-    condition: $TRAVIS_TAG =~ ^$ARTIFACT_NAME-(([0-9]).)+([0-9]+$)
+    condition: $TRAVIS_TAG =~ ^(([0-9]).)+([0-9]+$)
 
 - provider: releases
   api_key: "$GITHUB_OAUTH_TOKEN"
@@ -36,4 +36,4 @@ deploy:
   prerelease: true
   on:
     tags: true
-    condition: $TRAVIS_TAG =~ ^$ARTIFACT_NAME-.*(beta|alpha|pre).*$
+    condition: $TRAVIS_TAG =~ ^$*-*(beta|alpha|pre).*$
