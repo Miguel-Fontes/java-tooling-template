@@ -49,6 +49,14 @@
     </pluginManagement>
   </build>
 
+  <distributionManagement>
+    <repository>
+      <id>internal.repo</id>
+      <name>Staging Repository</name>
+      <url>file://${project.build.directory}/mvn-repo</url>
+    </repository>
+  </distributionManagement>
+
   <scm>
     <connection>scm:git:git@github.com:Miguel-Fontes/java-tooling-template.git</connection>
     <url>scm:git:git@github.com:Miguel-Fontes/java-tooling-template.git</url>
