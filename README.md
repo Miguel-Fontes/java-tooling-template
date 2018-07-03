@@ -15,7 +15,7 @@ O artefato final deste projeto é um archetype maven, que pode ser utilizado na 
 ### Construindo seu projeto
 
 1. Clone este repositório (`git@github.com:Miguel-Fontes/java-tooling-template.git`)
-2. Navegue até o diretório `archetype` e execute `mvn install`
+2. Execute `mvn install`
 3. Profit!
 
 Após instalar o archetype em seu repositório, utilize o archetype normalmente. Exemplo:
@@ -24,7 +24,7 @@ Após instalar o archetype em seu repositório, utilize o archetype normalmente.
 mvn archetype:generate                                     \
   -DarchetypeGroupId=br.com.miguelmf                       \
   -DarchetypeArtifactId=java-tooling-template-archetype    \
-  -DarchetypeVersion=1.0-SNAPSHOT                          \
+  -DarchetypeVersion=1.5-SNAPSHOT                          \
   -DgroupId=br.com.miguelmf                                \
   -DartifactId=meu-projeto                                 \
   -DgithubUser=Miguel-Fontes                               \

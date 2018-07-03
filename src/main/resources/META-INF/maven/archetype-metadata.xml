@@ -21,6 +21,7 @@
         <include>README.md</include>
         <include>.travis.yml</include>
         <include>.gitignore</include>
+        <include>LICENSE</include>
       </includes>
     </fileSet>
   </fileSets>
