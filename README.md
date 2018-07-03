@@ -20,7 +20,18 @@ O artefato final deste projeto é um archetype maven, que pode ser utilizado na 
 2. Execute `mvn install`
 3. Profit!
 
-#### Método 2 - Maven Install File
+#### Método 2 - Script de instalação
+
+Então, você quer uma instalação automatizada? We got it!
+
+1. No diretório utils, neste repositório, baixe o script `install.sh` para um diretório de sua preferência
+2. Delegue a permissão para execução com `chmod +x install.sh`
+3. Instale `./install.sh`
+4. Profit!
+
+O script aceita um argumento, a versão à ser instalada (que deve ser o nome de um release do Github releases). Se nenhuma versão for indicada, a mais recente é considerada.
+
+#### Método 3 - Maven Install File
 
 Baixa sua versão favorita do github releases e a instale com o `mvn install:install-file`. Exemplificando abaixo, considerando que o Jar está no diretório de trabalho atual (lembre-se de alterar as versões em `-Dversion` e no nome do arquivo, em `-Dfile`).
 
