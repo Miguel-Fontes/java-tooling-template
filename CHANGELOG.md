@@ -11,7 +11,7 @@
 
 ## unreleased
 
-- Nothing yet!
+- Ajustes em script Travis.yml do repositório
 
 ## Versão 1.6
 
