@@ -12,7 +12,7 @@ script:
 - mvn test -B
 
 before_deploy:
-- tar -zcf $TRAVIS_BUILD_DIR/$OUTPUT_DIR/$TRAVIS_TAG.tar.gz -C $TRAVIS_BUILD_DIR/$OUTPUT_DIR $(find $TRAVIS_BUILD_DIR/$OUTPUT_DIR/ -maxdepth 1 -name $ARTIFACT_NAME-*$ARTIFACT_EXTENSION -printf "%f\n")
+- tar -zcf $TRAVIS_BUILD_DIR/$OUTPUT_DIR/$ARTIFACT_NAME-$TRAVIS_TAG.tar.gz -C $TRAVIS_BUILD_DIR/$OUTPUT_DIR $(find $TRAVIS_BUILD_DIR/$OUTPUT_DIR/ -maxdepth 1 -name $ARTIFACT_NAME-*$ARTIFACT_EXTENSION -printf "%f\n")
 
 cache:
   directories:
@@ -21,18 +21,18 @@ cache:
 deploy:
 - provider: releases
   api_key: "$GITHUB_OAUTH_TOKEN"
-  file: "$TRAVIS_BUILD_DIR/$OUTPUT_DIR/$TRAVIS_TAG.tar.gz"
+  file: "$TRAVIS_BUILD_DIR/$OUTPUT_DIR/$ARTIFACT_NAME-$TRAVIS_TAG.tar.gz"
   skip_cleanup: true
-  name: $TRAVIS_TAG
+  name: "Release $ARTIFACT_NAME-$TRAVIS_TAG"
   on:
     tags: true
     condition: $TRAVIS_TAG =~ ^(([0-9]).)+([0-9]+$)
 
 - provider: releases
   api_key: "$GITHUB_OAUTH_TOKEN"
-  file: "$TRAVIS_BUILD_DIR/$OUTPUT_DIR/$TRAVIS_TAG.tar.gz"
+  file: "$TRAVIS_BUILD_DIR/$OUTPUT_DIR/$ARTIFACT_NAME-$TRAVIS_TAG.tar.gz"
   skip_cleanup: true
-  name: $TRAVIS_TAG
+  name: "Pre-Release $ARTIFACT_NAME-$TRAVIS_TAG"
   prerelease: true
   on:
     tags: true
