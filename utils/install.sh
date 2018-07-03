@@ -27,9 +27,10 @@ execute() {
 
     # Downloads the selected version from github releases
     echo -e "Downloading selected version from github releases...\n"
-    wget https://github.com/Miguel-Fontes/java-tooling-template/releases/download/java-tooling-template-"$VERSION"/java-tooling-template-"$VERSION".tar.gz
+    wget https://github.com/Miguel-Fontes/java-tooling-template/releases/download/$VERSION/java-tooling-template-archetype-$VERSION.tar.gz
 
-    if [ ! -f "java-tooling-template-$VERSION.tar.gz" ]; then
+
+    if [ ! -f "java-tooling-template-archetype-$VERSION.tar.gz" ]; then
         echo -e "${RED}An error ocurred downloading java-tooling-template-"$VERSION".tar.gz."
         echo -e "That version really exists? Check on https://github.com/Miguel-Fontes/java-tooling-template/releases!"
         exit 1
@@ -37,7 +38,7 @@ execute() {
 
     # Uncompress the tar on current directory
     echo "Uncompressing tar.gz"
-    tar -xvzf java-tooling-template-"$VERSION".tar.gz
+    tar -xvzf java-tooling-template-archetype-"$VERSION".tar.gz
 
     # Installs the jar on .m2
     echo -e "Intalling artifact to .m2\n"
@@ -52,6 +53,7 @@ execute() {
     # Cleanup
     echo -e "Cleaning up..."
     rm "$file"
+    rm "java-tooling-template-archetype-$VERSION.tar.gz"
 
     echo -e "Done!"
 }
