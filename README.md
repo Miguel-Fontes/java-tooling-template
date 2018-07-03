@@ -12,11 +12,27 @@ O artefato final deste projeto é um archetype maven, que pode ser utilizado na 
 
 ## Utilizando o Archetype
 
-### Construindo seu projeto
+### Instalando o Archetype
+
+#### Método 1 - Clonando o Repositório
 
 1. Clone este repositório (`git@github.com:Miguel-Fontes/java-tooling-template.git`)
 2. Execute `mvn install`
 3. Profit!
+
+#### Método 2 - Maven Install File
+
+Baixa sua versão favorita do github releases e a instale com o `mvn install:install-file`. Exemplificando abaixo, considerando que o Jar está no diretório de trabalho atual (lembre-se de alterar as versões em `-Dversion` e no nome do arquivo, em `-Dfile`).
+
+``` bash
+mvn install:install-file -Dfile=java-tooling-template-archetype-1.5.jar \
+  -DgroupId=br.com.miguelfontes                   \
+  -DartifactId=java-tooling-template-archetype    \
+  -Dpackaging=jar                                 \
+  -Dversion=1.5
+```
+
+### Construindo seu projeto
 
 Após instalar o archetype em seu repositório, utilize o archetype normalmente. Exemplo:
 
