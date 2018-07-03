@@ -53,11 +53,11 @@ O script aceita um argumento, a versão à ser instalada (que deve ser o nome de
 Baixa sua versão favorita do github releases, extraia, e a instale com o `mvn install:install-file`. Exemplificando abaixo, considerando que o Jar está no diretório de trabalho atual (lembre-se de alterar as versões em `-Dversion` e no nome do arquivo, em `-Dfile`).
 
 ``` bash
-mvn install:install-file -Dfile=java-tooling-template-archetype-1.6.jar \
+mvn install:install-file -Dfile=java-tooling-template-archetype-1.7.jar \
   -DgroupId=br.com.miguelfontes                   \
   -DartifactId=java-tooling-template-archetype    \
   -Dpackaging=jar                                 \
-  -Dversion=1.6
+  -Dversion=1.7
 ```
 
 ## Criando e configurando seu projeto
@@ -70,7 +70,7 @@ Após instalar o archetype em seu repositório, crie seu projeto utilizando o ma
 mvn archetype:generate                                     \
   -DarchetypeGroupId=br.com.miguelfontes                   \
   -DarchetypeArtifactId=java-tooling-template-archetype    \
-  -DarchetypeVersion=1.6                                   \
+  -DarchetypeVersion=1.7                                   \
   -DgroupId=br.com.miguelfontes                            \
   -DartifactId=meu-projeto                                 \
   -DgithubUser=Miguel-Fontes                               \

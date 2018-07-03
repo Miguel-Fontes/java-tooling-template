@@ -4,12 +4,17 @@
 
 - [Changelog](#changelog)
     - [unreleased](#unreleased)
+    - [Versão 1.7](#vers%C3%A3o-17)
     - [Versão 1.6](#vers%C3%A3o-16)
     - [Versão 1.5](#vers%C3%A3o-15)
 
 <!-- /TOC -->
 
 ## unreleased
+
+- Nada ainda!
+
+## Versão 1.7
 
 - Ajustes em script Travis.yml do repositório
 
