@@ -22,10 +22,10 @@ Após instalar o archetype em seu repositório, utilize o archetype normalmente.
 
 ``` bash
 mvn archetype:generate                                     \
-  -DarchetypeGroupId=br.com.miguelmf                       \
+  -DarchetypeGroupId=br.com.miguelfontes                   \
   -DarchetypeArtifactId=java-tooling-template-archetype    \
-  -DarchetypeVersion=1.5-SNAPSHOT                          \
-  -DgroupId=br.com.miguelmf                                \
+  -DarchetypeVersion=1.5                                   \
+  -DgroupId=br.com.miguelfontes                            \
   -DartifactId=meu-projeto                                 \
   -DgithubUser=Miguel-Fontes                               \
   -Dversion=1.0-SNAPSHOT                                   \
