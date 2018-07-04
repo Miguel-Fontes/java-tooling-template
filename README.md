@@ -48,6 +48,8 @@ Então, você quer uma instalação automatizada? We got it!
 
 O script aceita um argumento, a versão à ser instalada (que deve ser o nome de um release do Github releases). Se nenhuma versão for indicada, a mais recente é considerada.
 
+![install-java-tooling](https://user-images.githubusercontent.com/15656072/42249961-836d40d4-7f04-11e8-840a-037950b67a27.gif)
+
 ### Método 3 - Maven Install File
 
 Baixa sua versão favorita do github releases, extraia, e a instale com o `mvn install:install-file`. Exemplificando abaixo, considerando que o Jar está no diretório de trabalho atual (lembre-se de alterar as versões em `-Dversion` e no nome do arquivo, em `-Dfile`).
@@ -79,6 +81,8 @@ mvn archetype:generate                                     \
 ```
 
 O projeto irá considerar que o repositório da aplicação é `<githubUser>/<DartifactId>` (Ex: Miguel-Fontes/meu-projeto). Se o repositório possuir outro nome, ajuste o `pom.xml`, na seção `<scm>`. Feito isto, faça o commit inicial com o push para o Github.
+
+![create-project](https://user-images.githubusercontent.com/15656072/42250002-c90e6820-7f04-11e8-8ec7-8926bbf78df4.gif)
 
 ### Configurando o Travis
 
