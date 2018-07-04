@@ -48,7 +48,7 @@ Então, você quer uma instalação automatizada? We got it!
 
 O script aceita um argumento, a versão à ser instalada (que deve ser o nome de um release do Github releases). Se nenhuma versão for indicada, a mais recente é considerada.
 
-![install-java-tooling](https://user-images.githubusercontent.com/15656072/42249961-836d40d4-7f04-11e8-840a-037950b67a27.gif)
+![install-java-tooling](https://user-images.githubusercontent.com/15656072/42250090-2aa39808-7f05-11e8-9a23-f133eda89cc3.gif)
 
 ### Método 3 - Maven Install File
 
