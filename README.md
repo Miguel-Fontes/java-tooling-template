@@ -39,12 +39,13 @@ O artefato final deste projeto é um archetype maven, que pode ser utilizado na 
 
 ### Método 2 - Script de instalação
 
-Então, você quer uma instalação automatizada? We got it!
+Então, você quer uma instalação automatizada? We got it! Navegue até um diretório de sua escolha e:
 
-1. No diretório utils, neste repositório, baixe o script `install.sh` para um diretório de sua preferência
-2. Delegue a permissão para execução com `chmod +x install.sh`
-3. Instale `./install.sh`
-4. Profit!
+``` shell
+$ wget https://raw.githubusercontent.com/Miguel-Fontes/java-tooling-template/master/utils/install.sh
+$ chmod +x install.sh
+$ ./install.sh
+```
 
 O script aceita um argumento, a versão à ser instalada (que deve ser o nome de um release do Github releases). Se nenhuma versão for indicada, a mais recente é considerada.
 
