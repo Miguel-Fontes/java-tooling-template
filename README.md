@@ -12,11 +12,7 @@ O artefato final deste projeto é um archetype maven, que pode ser utilizado na 
 
 <!-- TOC -->
 
-- [Java Tooling Template ![Build Status](https://travis-ci.org/Miguel-Fontes/java-tooling-template)](#java-tooling-template-build-statushttpstravis-ciorgmiguel-fontesjava-tooling-template)
-  - [Instalando o Archetype](#instalando-o-archetype)
-    - [Método 1 - Clonando o Repositório](#m%C3%A9todo-1---clonando-o-reposit%C3%B3rio)
-    - [Método 2 - Script de instalação](#m%C3%A9todo-2---script-de-instala%C3%A7%C3%A3o)
-    - [Método 3 - Maven Install File](#m%C3%A9todo-3---maven-install-file)
+- [Java Tooling Template](#java-tooling-template-build-statushttpstravis-ciorgmiguel-fontesjava-tooling-template)
   - [Criando e configurando seu projeto](#criando-e-configurando-seu-projeto)
     - [Criando o projeto com o Maven](#criando-o-projeto-com-o-maven)
     - [Configurando o Travis](#configurando-o-travis)
@@ -29,51 +25,16 @@ O artefato final deste projeto é um archetype maven, que pode ser utilizado na 
 
 <!-- /TOC -->
 
-## Instalando o Archetype
-
-### Método 1 - Clonando o Repositório
-
-1. Clone este repositório (`git@github.com:Miguel-Fontes/java-tooling-template.git`)
-2. Execute `mvn install`
-3. Profit!
-
-### Método 2 - Script de instalação
-
-Então, você quer uma instalação automatizada? We got it! Navegue até um diretório de sua escolha e:
-
-``` shell
-$ wget https://raw.githubusercontent.com/Miguel-Fontes/java-tooling-template/master/utils/install.sh
-$ chmod +x install.sh
-$ ./install.sh
-```
-
-O script aceita um argumento, a versão à ser instalada (que deve ser o nome de um release do Github releases). Se nenhuma versão for indicada, a mais recente é considerada.
-
-![install-java-tooling](https://user-images.githubusercontent.com/15656072/42250090-2aa39808-7f05-11e8-9a23-f133eda89cc3.gif)
-
-### Método 3 - Maven Install File
-
-Baixa sua versão favorita do github releases, extraia, e a instale com o `mvn install:install-file`. Exemplificando abaixo, considerando que o Jar está no diretório de trabalho atual (lembre-se de alterar as versões em `-Dversion` e no nome do arquivo, em `-Dfile`).
-
-``` bash
-mvn install:install-file -Dfile=java-tooling-template-archetype-1.7.jar \
-  -DgroupId=br.com.miguelfontes                   \
-  -DartifactId=java-tooling-template-archetype    \
-  -Dpackaging=jar                                 \
-  -Dversion=1.7
-```
-
 ## Criando e configurando seu projeto
 
 ### Criando o projeto com o Maven
 
-Após instalar o archetype em seu repositório, crie seu projeto utilizando o maven. Exemplo:
+O Archetype está disponível no repositório Central (via OSSRH), portanto, crie seu projeto normalmente utilizando o maven. Exemplo:
 
 ``` bash
 mvn archetype:generate                                     \
   -DarchetypeGroupId=br.com.miguelfontes                   \
   -DarchetypeArtifactId=java-tooling-template-archetype    \
-  -DarchetypeVersion=1.7                                   \
   -DgroupId=br.com.miguelfontes                            \
   -DartifactId=meu-projeto                                 \
   -DgithubUser=Miguel-Fontes                               \
